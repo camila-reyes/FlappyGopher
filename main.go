@@ -39,7 +39,7 @@ func run() error {
 		return fmt.Errorf("could not draw title: %v", err)
 	}
 
-	show_window()
+	showWindow()
 
 	s, err := newScene(r)
 	if err != nil {
@@ -66,7 +66,7 @@ func run() error {
 	}
 }
 
-func show_window() {
+func showWindow() {
 	running := true
 	for running {
 		for event := sdl.PollEvent(); event != nil; event = sdl.PollEvent() {
