@@ -47,11 +47,6 @@ func run() error {
 	}
 	defer s.destroy()
 
-	//ctx, cancel := context.WithCancel(context.Background())
-	//time.AfterFunc(5*time.Second, cancel)
-	//
-	//return <-s.run(ctx, r)
-	//defer cancel()
 	events := make(chan sdl.Event)
 	errc := s.run(events, r)
 
@@ -98,7 +93,6 @@ func drawTitle(r *sdl.Renderer, text string) error {
 	if err != nil {
 		return fmt.Errorf("could not create texture: %v", err)
 	}
-	//defer t.Free()
 
 	if err := r.Copy(t, nil, nil); err != nil {
 		return fmt.Errorf("could not copy texture: %v", err)
